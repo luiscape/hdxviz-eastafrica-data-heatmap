@@ -44,6 +44,11 @@ downloadAndClean <- function(p = NULL, verbose = FALSE) {
 	# Melting
 	d_melt <- melt(d, id.vars = c("iso", "location"), na.rm = FALSE)
   
+  
+	#############################
+	# Visualization ASSESSMENTS #
+	#############################
+  
   # Summary data per country.
   a_country <- data.frame(
     iso = aggregate(value ~ iso, data = d_melt, length)$iso,
@@ -62,12 +67,53 @@ downloadAndClean <- function(p = NULL, verbose = FALSE) {
 	a_location$country <- countrycode(a_location$iso, "country.name", "iso3c")
 	a_location  <- a_location[is.na(a_location$country),]  # cleaning national measurements
   
+  # Assessment of indicators per country: national
+  c = d_melt
+  c$is_country <- countrycode(d_melt$location, "country.name", "iso3c")
+  c$is_country <- !is.na(c$is_country)
+  c_melt <- subset(c, is_country == TRUE & location != "Somali")
   
-  # Indicators per country
-  indicator_assessment <- dcast(subset(d_melt, value == FALSE), variable ~ iso)
+  
+	# Assessment of indicators per country: sub-national
+	country_assessment <- dcast(subset(c_melt, value == TRUE), variable ~ iso)
+	names(country_assessment)[1] <- "Indicator"
+	
+	# Adding total
+	country_assessment$"East_Africa" <- round(
+	  apply(
+	    country_assessment[2:ncol(country_assessment)],
+	    1,
+	    mean
+	  ), 
+	  0
+	)
+
+	country_assessment <- arrange(country_assessment, East_Africa)
+	names(country_assessment)[12] <- "East Africa"
+  
+  # Assessment of indicators per country: sub-national
+  melt_grouping <- group_by(d_melt, iso)
+	melt_grouping <- summarise(melt_grouping, n_locations = n_distinct(location))
+  x <- dcast(melt_grouping, .~ iso)
+  
+  # Calculating the number of observations per
+  # country. 
+	indicator_assessment <- dcast(subset(d_melt, value == FALSE), variable ~ iso)
 	names(indicator_assessment)[1] <- "Indicator"
   
-  # Adding total
+  # Calculating the relative completeness.
+	calculateRelative <- function() {
+	  for (i in 2:ncol(indicator_assessment)) {
+      n = names(indicator_assessment)[i]
+	    a = melt_grouping[melt_grouping$iso == n,][[2]]
+      indicator_assessment[i] <- round((indicator_assessment[i] / a),2) * 100
+	  }
+	  return(indicator_assessment)
+	}
+  
+	indicator_assessment <- calculateRelative()
+  
+  # Adding total for the region.
 	indicator_assessment$"East_Africa" <- round(
     apply(
       indicator_assessment[2:ncol(indicator_assessment)],
@@ -78,7 +124,12 @@ downloadAndClean <- function(p = NULL, verbose = FALSE) {
   )
 	indicator_assessment <- arrange(indicator_assessment, East_Africa)
   names(indicator_assessment)[12] <- "East Africa"
-
+  
+  
+  ########################
+  # TERMINAL ASSESSMENTS #
+	########################
+  
   # Average completeness:
   m = paste0(round(mean(a_country$share),2) * 100, "%")
   cat(silver("AVERAGE COUNTRY COMPLETENESS: ") %+% red(m) %+% "\n")
@@ -101,6 +152,12 @@ downloadAndClean <- function(p = NULL, verbose = FALSE) {
 	sink(paste0(p, "_indicator_assessment", ".json"))
 	cat(toJSON(indicator_assessment))
 	sink()
+  
+	# Indicator assessment
+	sink(paste0(p, "_country_indicator_assessment", ".json"))
+	cat(toJSON(country_assessment))
+	sink()
+	
 
 	write.csv(indicator_assessment, paste(p, "_indicator_assessment", ".csv"), row.names = FALSE)
 	
