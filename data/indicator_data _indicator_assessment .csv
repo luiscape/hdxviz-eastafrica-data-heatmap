@@ -1,53 +1,53 @@
 "Indicator","Burundi","Djibouti","Eritrea","Ethiopia","Kenya","Rwanda","Somalia","South Sudan","Sudan","Uganda","East Africa"
 "Road density",6,0,0,8,2,17,0,0,0,9,4
 "Internally displaced persons (IDPs)",6,0,0,0,0,17,5,9,6,9,5
-"People affected by Natural Disasters",6,0,14,8,2,17,5,0,0,9,6
-"Mobile Money Customers",6,20,0,0,2,17,5,0,6,9,6
 "CAPACITY TO COPE (FINANCIAL):
-Remittances as a % of GDP",6,20,0,8,2,17,0,0,6,9,7
+Remittances as a % of GDP",6,17,0,8,2,17,0,0,6,9,6
+"People affected by Natural Disasters",6,0,14,8,2,17,5,0,0,9,6
+"Mobile Money Customers",6,17,0,0,2,17,5,0,6,9,6
 "Percentage of labour force in agriculture",6,0,14,8,2,17,5,9,6,9,8
-"Domestic credit to private sector (% of GDP)",6,20,14,8,2,17,0,0,6,9,8
-"Insurance Penetration",6,20,14,8,2,17,0,0,6,9,8
-"Health expenditure per capita",6,20,14,8,2,17,0,9,6,9,9
-"Arable land (% of land area)",6,20,14,8,2,17,5,9,0,9,9
-"Cost to export (US$ per container)",6,20,14,8,2,17,0,9,6,9,9
-"Participation rate (15-24)",6,20,14,8,2,17,5,0,6,9,9
-"Inactivity rate (age 15-64)",6,20,14,8,2,17,5,0,6,9,9
-"Physical exposure to Flood",6,20,14,8,2,17,5,9,6,9,10
-"Total affected by Drought",6,20,14,8,2,17,5,9,6,9,10
-"Poverty gap",0,0,0,0,0,0,0,100,0,0,10
+"Domestic credit to private sector (% of GDP)",6,17,14,8,2,17,0,0,6,9,8
+"Insurance Penetration",6,17,14,8,2,17,0,0,6,9,8
+"Participation rate (15-24)",6,17,14,8,2,17,5,0,6,9,8
+"Inactivity rate (age 15-64)",6,17,14,8,2,17,5,0,6,9,8
+"Physical exposure to Flood",6,17,14,8,2,17,5,9,6,9,9
+"Total affected by Drought",6,17,14,8,2,17,5,9,6,9,9
 "CAPACITY TO COPE (Institutional):
-Government Effectiveness - World Governance Indicators ",6,20,14,8,2,17,5,9,6,9,10
-"GCRI Violent Conflict probability",6,20,14,8,2,17,5,9,6,9,10
-"Refugees by country of asylum",6,20,14,8,2,17,5,9,6,9,10
-"Returned Refugees",6,20,14,8,2,17,5,9,6,9,10
-"Corruption Perception Index",6,20,14,8,2,17,5,9,6,9,10
-"Internet users",6,20,14,8,2,17,5,9,6,9,10
-"Mobile cellular subscriptions",6,20,14,8,2,17,5,9,6,9,10
-"GDP per capita PPP int USD",6,20,14,8,2,17,5,9,6,9,10
-"Refugees who are assisted by UNHCR",6,20,14,8,8,17,5,55,6,9,15
+Government Effectiveness - World Governance Indicators ",6,17,14,8,2,17,5,9,6,9,9
+"GCRI Violent Conflict probability",6,17,14,8,2,17,5,9,6,9,9
+"Health expenditure per capita",6,17,14,8,2,17,0,9,6,9,9
+"Refugees by country of asylum",6,17,14,8,2,17,5,9,6,9,9
+"Returned Refugees",6,17,14,8,2,17,5,9,6,9,9
+"Corruption Perception Index",6,17,14,8,2,17,5,9,6,9,9
+"Internet users",6,17,14,8,2,17,5,9,6,9,9
+"Mobile cellular subscriptions",6,17,14,8,2,17,5,9,6,9,9
+"GDP per capita PPP int USD",6,17,14,8,2,17,5,9,6,9,9
+"Arable land (% of land area)",6,17,14,8,2,17,5,9,0,9,9
+"Cost to export (US$ per container)",6,17,14,8,2,17,0,9,6,9,9
+"Poverty gap",0,0,0,0,0,0,0,100,0,0,10
+"Refugees who are assisted by UNHCR",6,17,14,8,8,17,5,55,6,9,14
 "CAPACITY TO COPE (INFRASTRUCTURE):
-Physicians Density",0,20,0,8,100,17,5,9,6,9,17
+Physicians Density",0,17,0,8,100,17,5,9,6,9,17
 "Gender Inequality Index",6,0,0,100,100,17,5,0,6,9,24
-"Adult literacy rate",6,0,14,8,2,17,0,100,100,9,26
 "INCOME INEQUALITY:
-Gini coefficient",6,20,0,8,100,17,0,9,6,100,27
-"Human Development Index",6,20,14,8,100,100,5,9,89,9,36
-"One-year-olds fully immunized against measles",6,20,14,100,2,17,5,100,6,100,37
+Gini coefficient",6,17,0,8,100,17,0,9,6,100,26
+"Adult literacy rate",6,0,14,8,2,17,0,100,100,9,26
+"Human Development Index",6,17,14,8,100,100,5,9,89,9,36
+"One-year-olds fully immunized against measles",6,17,14,100,2,17,5,100,6,100,37
 "IPC",6,0,0,0,100,17,5,100,100,100,43
 "poverty headcount ratio - below '05 PPP $1.25/day",100,0,0,92,92,100,0,91,89,45,61
 "Refugees
-(By Country of Asylum)",6,20,14,100,100,100,5,100,100,100,64
+(By Country of Asylum)",6,17,14,100,100,100,5,100,100,100,64
 "EDUCATION:
-Schooling (% of population)",100,120,0,92,98,83,100,0,0,100,69
-"Multi-Dimensional Poverty Index",100,120,0,100,100,100,100,0,0,100,72
-"Access to electricity",100,120,14,92,100,100,100,9,0,100,74
+Schooling (% of population)",100,100,0,92,98,83,100,0,0,100,67
+"Multi-Dimensional Poverty Index",100,100,0,100,100,100,100,0,0,100,70
+"Access to electricity",100,100,14,92,100,100,100,9,0,100,72
 "LIVING STANDARDS:
-Deprived in Improved sanitation (% of population)",100,120,0,92,98,83,100,100,6,100,80
+Deprived in Improved sanitation (% of population)",100,100,0,92,98,83,100,100,6,100,78
 "LIVING STANDARDS:
-Drinking water (% of population)",100,120,14,92,98,83,100,100,6,100,81
+Drinking water (% of population)",100,100,14,92,98,83,100,100,6,100,79
 "HEALTH:
-Child mortality (% of population)",100,120,0,92,98,83,100,91,67,100,85
-"Security Incidents",89,80,86,100,100,100,100,100,67,100,92
-" Population",100,120,100,100,100,100,100,100,89,45,95
-" Surface area (sq. km) ",100,120,100,100,100,100,89,100,89,64,96
+Child mortality (% of population)",100,100,0,92,98,83,100,91,67,100,83
+"Security Incidents",89,67,86,100,100,100,100,100,67,100,91
+" Population",100,100,100,100,100,100,100,100,89,45,93
+" Surface area (sq. km) ",100,100,100,100,100,100,89,100,89,64,94
