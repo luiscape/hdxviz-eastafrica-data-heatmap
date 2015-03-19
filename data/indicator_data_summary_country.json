@@ -1,6 +1,6 @@
 {
  "iso": [ "Burundi", "Djibouti", "Eritrea", "Ethiopia", "Kenya", "Rwanda", "Somalia", "South Sudan", "Sudan", "Uganda" ],
 "total_values": [ 810, 270, 315, 540, 2160, 270, 855, 495, 810, 495 ],
-"total_values_available": [ 209, 77, 46, 176, 788, 98, 194, 155, 170, 170 ],
+"total_values_available": [ 209, 77, 46, 176, 788, 98, 193, 155, 169, 166 ],
 "share": [   0.26,   0.29,   0.15,   0.33,   0.36,   0.36,   0.23,   0.31,   0.21,   0.34 ] 
 }
