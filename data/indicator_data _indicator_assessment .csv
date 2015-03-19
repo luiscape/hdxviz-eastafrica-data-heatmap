@@ -1,0 +1,53 @@
+"Indicator","Burundi","Djibouti","Eritrea","Ethiopia","Kenya","Rwanda","Somalia","South Sudan","Sudan","Uganda","East Africa"
+"Road density",1,0,0,1,1,1,0,0,0,1,0
+"Physical exposure to Flood",1,1,1,1,1,1,1,1,1,1,1
+"Total affected by Drought",1,1,1,1,1,1,1,1,1,1,1
+"Poverty gap",0,0,0,0,0,0,0,11,0,0,1
+"Internally displaced persons (IDPs)",1,0,0,0,0,1,1,1,1,1,1
+"CAPACITY TO COPE (Institutional):
+Government Effectiveness - World Governance Indicators ",1,1,1,1,1,1,1,1,1,1,1
+"CAPACITY TO COPE (FINANCIAL):
+Remittances as a % of GDP",1,1,0,1,1,1,0,0,1,1,1
+"Percentage of labour force in agriculture",1,0,1,1,1,1,1,1,1,1,1
+"GCRI Violent Conflict probability",1,1,1,1,1,1,1,1,1,1,1
+"Health expenditure per capita",1,1,1,1,1,1,0,1,1,1,1
+"People affected by Natural Disasters",1,0,1,1,1,1,1,0,0,1,1
+"Refugees by country of asylum",1,1,1,1,1,1,1,1,1,1,1
+"Returned Refugees",1,1,1,1,1,1,1,1,1,1,1
+"Corruption Perception Index",1,1,1,1,1,1,1,1,1,1,1
+"Internet users",1,1,1,1,1,1,1,1,1,1,1
+"Mobile cellular subscriptions",1,1,1,1,1,1,1,1,1,1,1
+"GDP per capita PPP int USD",1,1,1,1,1,1,1,1,1,1,1
+"Arable land (% of land area)",1,1,1,1,1,1,1,1,1,1,1
+"Domestic credit to private sector (% of GDP)",1,1,1,1,1,1,0,0,1,1,1
+"Mobile Money Customers",1,1,0,0,1,1,1,0,1,1,1
+"Cost to export (US$ per container)",1,1,1,1,1,1,0,1,1,1,1
+"Insurance Penetration",1,1,1,1,1,1,0,0,1,1,1
+"Participation rate (15-24)",1,1,1,1,1,1,1,0,1,1,1
+"Inactivity rate (age 15-64)",1,1,1,1,1,1,1,0,1,1,1
+"Refugees who are assisted by UNHCR",1,1,1,1,4,1,1,6,1,1,2
+"One-year-olds fully immunized against measles",1,1,1,12,1,1,1,11,1,11,4
+"Adult literacy rate",1,0,1,1,1,1,0,11,18,1,4
+"INCOME INEQUALITY:
+Gini coefficient",1,1,0,1,48,1,0,1,1,11,6
+"CAPACITY TO COPE (INFRASTRUCTURE):
+Physicians Density",0,1,0,1,48,1,1,1,1,1,6
+"Gender Inequality Index",1,0,0,12,48,1,1,0,1,1,6
+"Human Development Index",1,1,1,1,48,6,1,1,16,1,8
+"IPC",1,0,0,0,48,1,1,11,18,11,9
+"poverty headcount ratio - below '05 PPP $1.25/day",18,0,0,11,44,6,0,10,16,5,11
+"Refugees
+(By Country of Asylum)",1,1,1,12,48,6,1,11,18,11,11
+"EDUCATION:
+Schooling (% of population)",18,6,0,11,47,5,19,0,0,11,12
+"Access to electricity",18,6,1,11,48,6,19,1,0,11,12
+"Multi-Dimensional Poverty Index",18,6,0,12,48,6,19,0,0,11,12
+"LIVING STANDARDS:
+Deprived in Improved sanitation (% of population)",18,6,0,11,47,5,19,11,1,11,13
+"LIVING STANDARDS:
+Drinking water (% of population)",18,6,1,11,47,5,19,11,1,11,13
+"Security Incidents",16,4,6,12,48,6,19,11,12,11,14
+"HEALTH:
+Child mortality (% of population)",18,6,0,11,47,5,19,10,12,11,14
+" Population",18,6,7,12,48,6,19,11,16,5,15
+" Surface area (sq. km) ",18,6,7,12,48,6,18,11,16,11,15

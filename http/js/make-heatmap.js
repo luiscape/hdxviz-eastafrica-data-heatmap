@@ -24,15 +24,18 @@ function makeHeatmap(d) {
                 }
             };
 
+            console.log(json["Indicator"].length);
             // console.log(d);
 
             $('#data-heatmap').highcharts({
 
                 chart: {
                     type: 'heatmap',
-                    marginTop: 40,
+                    marginTop: 80,
                     marginBottom: 80,
-                    height: 2000
+                    marginLeft: 120,
+                    height: 2000,
+                    width: 900
                 },
 
                 credits: false,
@@ -51,22 +54,25 @@ function makeHeatmap(d) {
                 yAxis: {
                     categories: json["Indicator"],
                     title: null,
+                    opposite: true,
                     minPadding: 0,
                     maxPadding: 0,
                     startOnTick: false,
                     endOnTick: false,
-                    min: 0
+                    min: 0,
+                    max: 42
                 },
 
                 colorAxis: {
                     min: 0,
-                    max: 100,
+                    max: 50,
                     minColor: '#ffffff',
                     maxColor: '#27ae60'
                 },
 
                 legend: {
-                    align: 'right',
+                    enabled: false,
+                    align: 'top',
                     layout: 'vertical',
                     margin: 0,
                     verticalAlign: 'top',
@@ -84,8 +90,11 @@ function makeHeatmap(d) {
 
                 series: [{
                     name: 'Data Completeness',
-                    borderWidth: 0,
+                    borderWidth: 4,
+                    borderRadius: 10,
+                    borderColor: '#ffffff',
                     data: d,
+                    colsize: 1,
                     dataLabels: {
                         enabled: false,
                         color: '#000000'
