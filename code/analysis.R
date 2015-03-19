@@ -68,7 +68,7 @@ downloadAndClean <- function(p = NULL, verbose = FALSE) {
 	names(indicator_assessment)[1] <- "Indicator"
   
   # Adding total
-	indicator_assessment$"Eastern_Africa" <- round(
+	indicator_assessment$"East_Africa" <- round(
     apply(
       indicator_assessment[2:ncol(indicator_assessment)],
       1,
@@ -76,8 +76,8 @@ downloadAndClean <- function(p = NULL, verbose = FALSE) {
     ), 
     0
   )
-	indicator_assessment <- arrange(indicator_assessment, Eastern_Africa)
-  names(indicator_assessment)[12] <- "Eastern Africa"
+	indicator_assessment <- arrange(indicator_assessment, East_Africa)
+  names(indicator_assessment)[12] <- "East Africa"
 
   # Average completeness:
   m = paste0(round(mean(a_country$share),2) * 100, "%")
