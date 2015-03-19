@@ -1,113 +1,100 @@
 <!DOCTYPE html>
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" href="http/css/vendor/bootstrap/bootstrap.css">
-  <link rel="stylesheet" type="text/css" href="http/css/style.css">
-
-  <!-- progress bar -->
-  <link rel="stylesheet" href="http/css/loader.css">
-  <script type="text/javascript" src="http/js/pace.min.js"></script>
-
-  <!-- nice fonts -->
-  <link rel="stylesheet" href="//brick.a.ssl.fastly.net/EB+Garamond:400,400i/Open+Sans:400,700">
-
-  <title>East Africa - Data Availability Assessment</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="http/css/vendor/bootstrap/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="http/css/style.css">
+    <!-- progress bar -->
+    <link rel="stylesheet" href="http/css/loader.css">
+    <script type="text/javascript" src="http/js/pace.min.js"></script>
+    <!-- nice fonts -->
+    <link rel="stylesheet" href="//brick.a.ssl.fastly.net/EB+Garamond:400,400i/Open+Sans:400,700">
+    <title>East Africa - Data Availability Assessment</title>
 </head>
 <style>
-
-
-
 .intra-boundary {
-  fill: #ecf0f1;
-  stroke: #fff;
-  stroke-width: 2;
-  /*stroke-dasharray: 2,2;*/
-  /*stroke-linejoin: round;*/
+    fill: #ecf0f1;
+    stroke: #fff;
+    stroke-width: 2;
+    /*stroke-dasharray: 2,2;*/
+    /*stroke-linejoin: round;*/
 }
 
 .boundary {
-  fill: none;
-  stroke: #000000;
-  stroke-width: 4;
-  /*stroke-dasharray: 2,2;*/
-  /*stroke-linejoin: round;*/
+    fill: none;
+    stroke: #000000;
+    stroke-width: 4;
+    /*stroke-dasharray: 2,2;*/
+    /*stroke-linejoin: round;*/
 }
-
 
 .d3-tip {
-  line-height: 1;
-  font-weight: bold;
-  padding: 12px;
-  background: rgba(0, 0, 0, 0.8);
-  color: #fff;
-  border-radius: 2px;
+    line-height: 1;
+    font-weight: bold;
+    padding: 12px;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    border-radius: 2px;
 }
-
 /* Creates a small triangle extender for the tooltip */
-.d3-tip:after {
-  box-sizing: border-box;
-  display: inline;
-  font-size: 10px;
-  width: 100%;
-  line-height: 1;
-  color: rgba(0, 0, 0, 0.8);
-  content: "\25BC";
-  position: absolute;
-  text-align: center;
-}
 
+.d3-tip:after {
+    box-sizing: border-box;
+    display: inline;
+    font-size: 10px;
+    width: 100%;
+    line-height: 1;
+    color: rgba(0, 0, 0, 0.8);
+    content: "\25BC";
+    position: absolute;
+    text-align: center;
+}
 /* Style northward tooltips differently */
+
 .d3-tip.n:after {
-  margin: -1px 0 0 0;
-  top: 100%;
-  left: 0;
+    margin: -1px 0 0 0;
+    top: 100%;
+    left: 0;
 }
 </style>
 
 <body>
-<div class="top-bar"></div>
-<div class="col-md-1"></div>
-<div class="col-md-6">
-  <h1 class="title">Data Availability Assessment:</h1>
-  <h2 class="sub-title">Availability of sub-national data for 10 East African countries and 42 indicators.</h2>
-  <div>
-    <p>
-      The heatmap on this page describes data availability for each indicator (x axis) and each of the 10 countries country (y axis) from East Africa. The assessment was done based on the data compiled by the Humanitarian Data Exchange project. Original dataset (permissions needed) can be accessed <a href="" target="_blank">here</a>.
-    </p>
-  </div>
-  <!-- <div>Frequência de chuvas no Ceará. <a href="#" id="menos-dias">menos</a> | <a href="#" id="mais-dias">mais</a></div> -->
-  <br>
-  <!-- <div id="sparkline"></div> -->
-
-</div>
-
-<div class="col-md-6 results-container">
-  <div id="mapa"></div>
-</div>
-
-<div class="col-md-12" style="height: 1500px;">
-  <div id="data-heatmap"></div>
-</div>
-
-<!-- Application -->
-<script src="http://d3js.org/d3.v3.min.js"></script>
-<script src="http://d3js.org/topojson.v1.min.js"></script>
-<script src="http/js/d3.tip.js"></script>
-<script src="http/js/c3.min.js"></script>
-<link rel="stylesheet" href="http/css/c3.min.css">
-<!-- <script src="http/js/mapa.js"></script> -->
-
-<!-- Heatmap -->
-<!-- <link rel="stylesheet" href="http/css/cal-heatmap.css" /> -->
-<!-- <script type="text/javascript" src="http/js/cal-heatmap.js"></script> -->
-<!-- <script type="text/javascript" src="http/js/rain-heatmap.js"></script> -->
-<!-- <script type="text/javascript" src="http/js/sparklines.js"></script> -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-<script src="http://code.highcharts.com/highcharts.js"></script>
-<script src="http://code.highcharts.com/modules/heatmap.js"></script>
-<script src="http://code.highcharts.com/modules/exporting.js"></script>
-<script type="text/javascript" src="http/js/make-heatmap.js"></script>
-
-
+    <div class="top-bar"></div>
+    <div class="col-md-1"></div>
+    <div class="col-md-6">
+        <h1 class="title">Data Availability Assessment:</h1>
+        <h2 class="sub-title">Availability of sub-national data for 10 East African countries and 42 indicators.</h2>
+        <div>
+            <p>
+                The heatmap on this page describes data availability for each indicator (x axis) and each of the 10 countries country (y axis) from East Africa. The assessment was done based on the data compiled by the Humanitarian Data Exchange project. Original dataset (permissions needed) can be accessed <a href="" target="_blank">here</a>.
+            </p>
+            <!-- Changing the type of visualization -->
+            <a class="btn btn-default" onclick="makeHeatmapNational('data/indicator_data_country_indicator_assessment.json', '#heatmap', 1, 1);">National</a>
+            <a class="btn btn-default" onclick="makeHeatmap('data/indicator_data_indicator_assessment.json', '#heatmap', 50, 0);">Sub-national</a>
+        </div>
+        <br>
+    </div>
+    <div class="col-md-10" style="height: 1500px;">
+        <div class="col-md-1" style="padding-right: 15px;"></div>
+        <!-- <div id="country-heatmap"></div> -->
+        <div id="heatmap"></div>
+    </div>
+    <!-- Application -->
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="http://d3js.org/topojson.v1.min.js"></script>
+    <script src="http/js/d3.tip.js"></script>
+    <script src="http/js/c3.min.js"></script>
+    <link rel="stylesheet" href="http/css/c3.min.css">
+    <!-- <script src="http/js/mapa.js"></script> -->
+    <!-- Heatmap -->
+    <!-- <link rel="stylesheet" href="http/css/cal-heatmap.css" /> -->
+    <!-- <script type="text/javascript" src="http/js/cal-heatmap.js"></script> -->
+    <!-- <script type="text/javascript" src="http/js/rain-heatmap.js"></script> -->
+    <!-- <script type="text/javascript" src="http/js/sparklines.js"></script> -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script src="http://code.highcharts.com/highcharts.js"></script>
+    <script src="http://code.highcharts.com/modules/heatmap.js"></script>
+    <script src="http://code.highcharts.com/modules/exporting.js"></script>
+    <script type="text/javascript" src="http/js/make-heatmap.js"></script>
 </body>
