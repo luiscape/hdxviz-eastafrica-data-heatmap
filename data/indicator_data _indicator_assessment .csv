@@ -9,6 +9,7 @@ Remittances as a % of GDP",6,20,0,8,2,17,0,0,6,9,7
 "Domestic credit to private sector (% of GDP)",6,20,14,8,2,17,0,0,6,9,8
 "Insurance Penetration",6,20,14,8,2,17,0,0,6,9,8
 "Health expenditure per capita",6,20,14,8,2,17,0,9,6,9,9
+"Arable land (% of land area)",6,20,14,8,2,17,5,9,0,9,9
 "Cost to export (US$ per container)",6,20,14,8,2,17,0,9,6,9,9
 "Participation rate (15-24)",6,20,14,8,2,17,5,0,6,9,9
 "Inactivity rate (age 15-64)",6,20,14,8,2,17,5,0,6,9,9
@@ -24,7 +25,6 @@ Government Effectiveness - World Governance Indicators ",6,20,14,8,2,17,5,9,6,9,
 "Internet users",6,20,14,8,2,17,5,9,6,9,10
 "Mobile cellular subscriptions",6,20,14,8,2,17,5,9,6,9,10
 "GDP per capita PPP int USD",6,20,14,8,2,17,5,9,6,9,10
-"Arable land (% of land area)",6,20,14,8,2,17,5,9,6,9,10
 "Refugees who are assisted by UNHCR",6,20,14,8,8,17,5,55,6,9,15
 "CAPACITY TO COPE (INFRASTRUCTURE):
 Physicians Density",0,20,0,8,100,17,5,9,6,9,17
@@ -50,4 +50,4 @@ Drinking water (% of population)",100,120,14,92,98,83,100,100,6,100,81
 Child mortality (% of population)",100,120,0,92,98,83,100,91,67,100,85
 "Security Incidents",89,80,86,100,100,100,100,100,67,100,92
 " Population",100,120,100,100,100,100,100,100,89,45,95
-" Surface area (sq. km) ",100,120,100,100,100,100,95,100,89,100,100
+" Surface area (sq. km) ",100,120,100,100,100,100,89,100,89,64,96
