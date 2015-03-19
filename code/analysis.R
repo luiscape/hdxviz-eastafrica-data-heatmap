@@ -16,19 +16,22 @@ downloadAndClean <- function(p = NULL, verbose = FALSE) {
 
 	# Downloading file.
 	cat("Downloading file ... \n")
-	u = "https://docs.google.com/spreadsheets/d/1L7O4QFetHdHUdsIv4xgb2rGLGQxIlEYIy-bLXMu5wVU/export?format=csv"
+	u = "https://docs.google.com/spreadsheets/d/1L7O4QFetHdHUdsIv4xgb2rGLGQxIlEYIy-bLXMu5wVU/export?format=csv&gid=1499327503"
 	download.file(u, paste0(p, ".csv"), method = 'wget')
 	cat("done.\n")
 
 	# Cleaning file.
-	d = read.csv(paste0(p, ".csv"),  skip = 1, na.strings = '')
-	d = d[4:nrow(d),]
+	d = read.csv(paste0(p, ".csv"), skip = 1, na.strings = '', header = FALSE)
+  n = lapply(d[1,], function(x) as.character(x))
+	d = d[5:nrow(d),]
+	names(d) <- n
 	names(d)[1:2] <- c("iso", "location")
   
   
   cat("Cleaning ...\n")
   # Adding iso codes for the countries.
 	d$iso <- countrycode(d$iso, "country.name", "iso3c")
+	d$iso <- countrycode(d$iso, "iso3c", "country.name")
   
   # Converting data points into a logical test so
   # we can evaluate if that is missing or not.
@@ -39,7 +42,7 @@ downloadAndClean <- function(p = NULL, verbose = FALSE) {
   cat("-----------------------------------------------\n")
   
 	# Melting
-	d_melt <- melt(d, id.vars = c("iso", "location"))
+	d_melt <- melt(d, id.vars = c("iso", "location"), na.rm = FALSE)
   
   # Summary data per country.
   a_country <- data.frame(
@@ -63,6 +66,18 @@ downloadAndClean <- function(p = NULL, verbose = FALSE) {
   # Indicators per country
   indicator_assessment <- dcast(subset(d_melt, value == FALSE), variable ~ iso)
 	names(indicator_assessment)[1] <- "Indicator"
+  
+  # Adding total
+	indicator_assessment$"Eastern_Africa" <- round(
+    apply(
+      indicator_assessment[2:ncol(indicator_assessment)],
+      1,
+      mean
+    ), 
+    0
+  )
+	indicator_assessment <- arrange(indicator_assessment, Eastern_Africa)
+  names(indicator_assessment)[12] <- "Eastern Africa"
 
   # Average completeness:
   m = paste0(round(mean(a_country$share),2) * 100, "%")
@@ -86,6 +101,8 @@ downloadAndClean <- function(p = NULL, verbose = FALSE) {
 	sink(paste0(p, "_indicator_assessment", ".json"))
 	cat(toJSON(indicator_assessment))
 	sink()
+
+	write.csv(indicator_assessment, paste(p, "_indicator_assessment", ".csv"), row.names = FALSE)
 	
   
 }

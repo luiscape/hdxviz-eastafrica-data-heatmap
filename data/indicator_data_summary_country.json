@@ -1,6 +1,6 @@
 {
- "iso": [ "BDI", "DJI", "ERI", "ETH", "KEN", "RWA", "SDN", "SOM", "SSD", "UGA" ],
-"total_values": [ 2286, 762, 889, 1524, 6096, 762, 2286, 2413, 1397, 1397 ],
-"total_values_available": [ 490, 204, 98, 463, 1929, 233, 318, 454, 321, 464 ],
-"share": [   0.21,   0.27,   0.11,    0.3,   0.32,   0.31,   0.14,   0.19,   0.23,   0.33 ] 
+ "iso": [ "Burundi", "Djibouti", "Eritrea", "Ethiopia", "Kenya", "Rwanda", "Somalia", "South Sudan", "Sudan", "Uganda" ],
+"total_values": [ 810, 270, 315, 540, 2160, 270, 855, 495, 810, 495 ],
+"total_values_available": [ 209, 77, 46, 176, 788, 98, 194, 155, 170, 170 ],
+"share": [   0.26,   0.29,   0.15,   0.33,   0.36,   0.36,   0.23,   0.31,   0.21,   0.34 ] 
 }
