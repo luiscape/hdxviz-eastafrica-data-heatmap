@@ -30,6 +30,17 @@ h5 {
 	font-style: italic;
 }
 
+/* Footnote */
+.footnote {
+	font-size: 11px !important;
+	position: fixed !important;
+	right: 20px;
+	bottom: 10px;
+	width: 300px;
+	line-height: 10px !important;
+	z-index: 100;
+}
+
 .sub-title {
 	font-family: 'EB Garamond';
 	font-size: 27px;
