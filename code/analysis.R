@@ -75,21 +75,37 @@ downloadAndClean <- function(p = NULL, verbose = FALSE) {
   
   
 	# Assessment of indicators per country: sub-national
-	country_assessment <- dcast(subset(c_melt, value == TRUE), variable ~ iso)
+	country_assessment <- dcast(subset(c_melt, value == FALSE), variable ~ iso)
 	names(country_assessment)[1] <- "Indicator"
 	
 	# Adding total
-	country_assessment$"East_Africa" <- round(
+	country_assessment$"East_Africa" <-
 	  apply(
 	    country_assessment[2:ncol(country_assessment)],
 	    1,
-	    mean
-	  ), 
-	  0
-	)
+	    sum
+	  )
 
-	country_assessment <- arrange(country_assessment, East_Africa)
-	names(country_assessment)[12] <- "East Africa"
+  # Inputting indicators that have no data
+  country_assessment$Indicator <- as.character(country_assessment$Indicator)
+  # country_assessment[nrow(country_assessment) + 1,] <- c("Population", rep(0, ncol(country_assessment) - 1))
+  # country_assessment[nrow(country_assessment) + 1,] <- c("Security Incidents", rep(0, ncol(country_assessment) - 1))
+  # country_assessment[nrow(country_assessment) + 1,] <- c("Surface Area (sq. km) ", rep(0, ncol(country_assessment) - 1))
+
+  country_assessment[nrow(country_assessment) + 1,] <- c("Global Acute Malnutrition", rep(0, ncol(country_assessment) - 1))
+  country_assessment[nrow(country_assessment) + 1,] <- c("Disaster Risk Reduction", rep(0, ncol(country_assessment) - 1))
+
+  # Fixing how some countries have 2 to 1.
+  country_assessment$Djibouti <- ifelse(country_assessment$Djibouti == 2, 1, country_assessment$Djibouti)
+  country_assessment$Ethiopia <- ifelse(country_assessment$Ethiopia == 2, 1, country_assessment$Ethiopia)
+
+  # Re-arranging data.
+  country_assessment$East_Africa <- as.numeric(country_assessment$East_Africa)
+  country_assessment <- arrange(country_assessment, East_Africa)
+  names(country_assessment)[12] <- "East Africa"
+
+  # Removing East Africa from the country assessment column
+  country_assessment$"East Africa" <- NULL
   
   # Assessment of indicators per country: sub-national
   melt_grouping <- group_by(d_melt, iso)
@@ -122,8 +138,17 @@ downloadAndClean <- function(p = NULL, verbose = FALSE) {
     ), 
     0
   )
+
+  # Inputting indicators that have no data
+	indicator_assessment$Indicator <- as.character(indicator_assessment$Indicator)
+  indicator_assessment[nrow(indicator_assessment) + 1,] <- c("Global Acute Malnutrition", rep(0, ncol(indicator_assessment) - 1))
+  indicator_assessment[nrow(indicator_assessment) + 1,] <- c("Disaster Risk Reduction", rep(0, ncol(indicator_assessment) - 1))
+
+  # Arranging data to look nice.
+  indicator_assessment$East_Africa <- as.numeric(indicator_assessment$East_Africa)
 	indicator_assessment <- arrange(indicator_assessment, East_Africa)
   names(indicator_assessment)[12] <- "East Africa"
+  
   
   
   ########################
@@ -139,14 +164,14 @@ downloadAndClean <- function(p = NULL, verbose = FALSE) {
   
   ## Writting output.
   # Summary data per country.
-  sink(paste0(p, "_summary_country", ".json"))
-  cat(toJSON(a_country))
-  sink()
+  # sink(paste0(p, "_summary_country", ".json"))
+  # cat(toJSON(a_country))
+  # sink()
   
   # Summary data per location.
-	sink(paste0(p, "_summary_location", ".json"))
-	cat(toJSON(a_location))
-	sink()
+	# sink(paste0(p, "_summary_location", ".json"))
+	# cat(toJSON(a_location))
+	# sink()
   
 	# Indicator assessment
 	sink(paste0(p, "_indicator_assessment", ".json"))
@@ -159,7 +184,7 @@ downloadAndClean <- function(p = NULL, verbose = FALSE) {
 	sink()
 	
 
-	write.csv(indicator_assessment, paste(p, "_indicator_assessment", ".csv"), row.names = FALSE)
+	write.csv(indicator_assessment, paste0(p, "_indicator_assessment", ".csv"), row.names = FALSE)
 	
   
 }
