@@ -28,8 +28,8 @@
 "Gini Coefficient",6,17,0,8,100,17,0,9,6,100,26
 "Adult Literacy Rate",6,0,14,8,2,17,0,100,100,9,26
 "Human Development Index",6,17,14,8,100,100,5,9,89,9,36
-"One-year-olds fully Immunized Against Measles",6,17,14,100,2,17,5,100,6,100,37
 "Integrated Phase Classification",6,0,0,0,100,17,5,100,100,100,43
+"One-year-olds fully Immunized Against Measles",6,17,14,100,100,17,5,100,6,100,46
 "Poverty Headcount Ratio, below $1.25/day",100,0,0,92,92,100,0,91,89,45,61
 "Refugees
 (by Country of Asylum)",6,17,14,100,100,100,5,100,100,100,64
