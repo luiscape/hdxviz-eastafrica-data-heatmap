@@ -1,46 +1,44 @@
 "Indicator","Burundi","Djibouti","Eritrea","Ethiopia","Kenya","Rwanda","Somalia","South Sudan","Sudan","Uganda","East Africa"
-"Global Acute Malnutrition","0","0","0","0","0","0","0","0","0","0",0
-"Disaster Risk Reduction","0","0","0","0","0","0","0","0","0","0",0
-"Road Density","6","0","0","8","2","17","0","0","0","9",4
-"Remittances as a % of GDP","6","17","0","8","2","17","0","0","6","9",6
-"People Affected by Natural Disasters","6","0","14","8","2","17","5","0","0","9",6
-"Mobile Money Customers","6","17","0","0","2","17","5","0","6","9",6
-"Percentage of Labour Force in Agriculture","6","0","14","8","2","17","5","9","6","9",8
-"Domestic Credit to Private Sector (% of GDP)","6","17","14","8","2","17","0","0","6","9",8
-"Insurance Penetration","6","17","14","8","2","17","0","0","6","9",8
-"Participation Rate (15-24)","6","17","14","8","2","17","5","0","6","9",8
-"Inactivity Rate (age 15-64)","6","17","14","8","2","17","5","0","6","9",8
-"Physical Exposure to Flood","6","17","14","8","2","17","5","9","6","9",9
-"Total Affected by Drought","6","17","14","8","2","17","5","9","6","9",9
-"Government Effectiveness","6","17","14","8","2","17","5","9","6","9",9
-"Violent Conflict Probability","6","17","14","8","2","17","5","9","6","9",9
-"Health Expenditure per Capita","6","17","14","8","2","17","0","9","6","9",9
-"Internally Displaced Persons (IDPs)","6","17","14","8","2","17","5","9","6","9",9
-"Returned Refugees","6","17","14","8","2","17","5","9","6","9",9
-"Corruption Perception Index","6","17","14","8","2","17","5","9","6","9",9
-"Internet Users","6","17","14","8","2","17","5","9","6","9",9
-"Mobile Cellular Subscriptions","6","17","14","8","2","17","5","9","6","9",9
-"GDP per Capita PPP","6","17","14","8","2","17","5","9","6","9",9
-"Arable Land (% of land area)","6","17","14","8","2","17","5","9","0","9",9
-"Cost to Export (US$ per container)","6","17","14","8","2","17","0","9","6","9",9
-"Poverty Gap","0","0","0","0","0","0","0","100","0","0",10
-"Refugees Who are Assisted by UNHCR","6","17","14","8","8","17","5","55","6","9",14
-"Physicians Density","0","17","0","8","100","17","5","9","6","9",17
-"Gender Inequality Index","6","0","0","100","100","17","5","0","6","9",24
-"Gini Coefficient","6","17","0","8","100","17","0","9","6","100",26
-"Adult Literacy Rate","6","0","14","8","2","17","0","100","100","9",26
-"Human Development Index","6","17","14","8","100","100","5","9","89","9",36
-"One-year-olds fully Immunized Against Measles","6","17","14","100","2","17","5","100","6","100",37
-"Integrated Phase Classification","6","0","0","0","100","17","5","100","100","100",43
-"Poverty Headcount Ratio, below $1.25/day","100","0","0","92","92","100","0","91","89","45",61
+"Road Density",6,0,0,8,2,17,0,0,0,9,4
+"Remittances as a % of GDP",6,17,0,8,2,17,0,0,6,9,6
+"People Affected by Natural Disasters",6,0,14,8,2,17,5,0,0,9,6
+"Mobile Money Customers",6,17,0,0,2,17,5,0,6,9,6
+"Percentage of Labour Force in Agriculture",6,0,14,8,2,17,5,9,6,9,8
+"Domestic Credit to Private Sector (% of GDP)",6,17,14,8,2,17,0,0,6,9,8
+"Insurance Penetration",6,17,14,8,2,17,0,0,6,9,8
+"Participation Rate (15-24)",6,17,14,8,2,17,5,0,6,9,8
+"Inactivity Rate (age 15-64)",6,17,14,8,2,17,5,0,6,9,8
+"Physical Exposure to Flood",6,17,14,8,2,17,5,9,6,9,9
+"Total Affected by Drought",6,17,14,8,2,17,5,9,6,9,9
+"Government Effectiveness",6,17,14,8,2,17,5,9,6,9,9
+"Violent Conflict Probability",6,17,14,8,2,17,5,9,6,9,9
+"Health Expenditure per Capita",6,17,14,8,2,17,0,9,6,9,9
+"Internally Displaced Persons (IDPs)",6,17,14,8,2,17,5,9,6,9,9
+"Returned Refugees",6,17,14,8,2,17,5,9,6,9,9
+"Corruption Perception Index",6,17,14,8,2,17,5,9,6,9,9
+"Internet Users",6,17,14,8,2,17,5,9,6,9,9
+"Mobile Cellular Subscriptions",6,17,14,8,2,17,5,9,6,9,9
+"GDP per Capita PPP",6,17,14,8,2,17,5,9,6,9,9
+"Arable Land (% of land area)",6,17,14,8,2,17,5,9,0,9,9
+"Cost to Export (US$ per container)",6,17,14,8,2,17,0,9,6,9,9
+"Poverty Gap",0,0,0,0,0,0,0,100,0,0,10
+"Refugees Who are Assisted by UNHCR",6,17,14,8,8,17,5,55,6,9,14
+"Physicians Density",0,17,0,8,100,17,5,9,6,9,17
+"Gender Inequality Index",6,0,0,100,100,17,5,0,6,9,24
+"Gini Coefficient",6,17,0,8,100,17,0,9,6,100,26
+"Adult Literacy Rate",6,0,14,8,2,17,0,100,100,9,26
+"Human Development Index",6,17,14,8,100,100,5,9,89,9,36
+"One-year-olds fully Immunized Against Measles",6,17,14,100,2,17,5,100,6,100,37
+"Integrated Phase Classification",6,0,0,0,100,17,5,100,100,100,43
+"Poverty Headcount Ratio, below $1.25/day",100,0,0,92,92,100,0,91,89,45,61
 "Refugees
-(by Country of Asylum)","6","17","14","100","100","100","5","100","100","100",64
-"Schooling (% of population)","100","100","0","92","98","83","100","0","0","100",67
-"Multi-Dimensional Poverty Index","100","100","0","100","100","100","100","0","0","100",70
-"Access to Electricity","100","100","14","92","100","100","100","9","0","100",72
-"Deprived in Improved Sanitation (% of population)","100","100","0","92","98","83","100","100","6","100",78
-"Drinking Water (% of population)","100","100","14","92","98","83","100","100","6","100",79
-"Child Mortality (% of population)","100","100","0","92","98","83","100","91","67","100",83
-"Security Incidents","89","67","86","100","100","100","100","100","67","100",91
-" Population","100","100","100","100","100","100","100","100","89","45",93
-" Surface Area (sq. km) ","100","100","100","100","100","100","89","100","89","64",94
+(by Country of Asylum)",6,17,14,100,100,100,5,100,100,100,64
+"Schooling (% of population)",100,100,0,92,98,83,100,0,0,100,67
+"Multi-Dimensional Poverty Index",100,100,0,100,100,100,100,0,0,100,70
+"Access to Electricity",100,100,14,92,100,100,100,9,0,100,72
+"Deprived in Improved Sanitation (% of population)",100,100,0,92,98,83,100,100,6,100,78
+"Drinking Water (% of population)",100,100,14,92,98,83,100,100,6,100,79
+"Child Mortality (% of population)",100,100,0,92,98,83,100,91,67,100,83
+"Security Incidents",89,67,86,100,100,100,100,100,67,100,91
+" Population",100,100,100,100,100,100,100,100,89,45,93
+" Surface Area (sq. km) ",100,100,100,100,100,100,89,100,89,64,94
