@@ -92,8 +92,8 @@ downloadAndClean <- function(p = NULL, verbose = FALSE) {
   # country_assessment[nrow(country_assessment) + 1,] <- c("Security Incidents", rep(0, ncol(country_assessment) - 1))
   # country_assessment[nrow(country_assessment) + 1,] <- c("Surface Area (sq. km) ", rep(0, ncol(country_assessment) - 1))
 
-  country_assessment[nrow(country_assessment) + 1,] <- c("Global Acute Malnutrition", rep(0, ncol(country_assessment) - 1))
-  country_assessment[nrow(country_assessment) + 1,] <- c("Disaster Risk Reduction", rep(0, ncol(country_assessment) - 1))
+  # country_assessment[nrow(country_assessment) + 1,] <- c("Global Acute Malnutrition", rep(0, ncol(country_assessment) - 1))
+  # country_assessment[nrow(country_assessment) + 1,] <- c("Disaster Risk Reduction", rep(0, ncol(country_assessment) - 1))
 
   # Fixing how some countries have 2 to 1.
   country_assessment$Djibouti <- ifelse(country_assessment$Djibouti == 2, 1, country_assessment$Djibouti)
@@ -141,8 +141,8 @@ downloadAndClean <- function(p = NULL, verbose = FALSE) {
 
   # Inputting indicators that have no data
 	indicator_assessment$Indicator <- as.character(indicator_assessment$Indicator)
-  indicator_assessment[nrow(indicator_assessment) + 1,] <- c("Global Acute Malnutrition", rep(0, ncol(indicator_assessment) - 1))
-  indicator_assessment[nrow(indicator_assessment) + 1,] <- c("Disaster Risk Reduction", rep(0, ncol(indicator_assessment) - 1))
+  # indicator_assessment[nrow(indicator_assessment) + 1,] <- c("Global Acute Malnutrition", rep(0, ncol(indicator_assessment) - 1))
+  # indicator_assessment[nrow(indicator_assessment) + 1,] <- c("Disaster Risk Reduction", rep(0, ncol(indicator_assessment) - 1))
 
   # Arranging data to look nice.
   indicator_assessment$East_Africa <- as.numeric(indicator_assessment$East_Africa)
