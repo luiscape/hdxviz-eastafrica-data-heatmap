@@ -64,6 +64,7 @@ function makeHeatmap(d, div_id, max, color_index) {
           reflow: true
         },
 
+        color: ["#a6611a", "#dfc27d", "#80cdc1", "#018571"],
         credits: false,
 
         title: {
@@ -95,8 +96,32 @@ function makeHeatmap(d, div_id, max, color_index) {
         colorAxis: {
           min: 0,
           max: max,
-          minColor: color_set.min,
-          maxColor: color_set.max
+          dataClasses: [{
+            color: "#a6611a",
+            name: "Complete",
+            from: 1,
+            to: 1
+            },
+            {
+            color: "#dfc27d",
+            name: "National",
+            from: 2,
+            to: 2
+            },
+            {
+            color: "#80cdc1",
+            name: "Partial",
+            from: 3,
+            to: 3
+            },
+            {
+            color: "#018571",
+            name: "No data",
+            from: 4,
+            to: 4
+            }]
+            // minColor: color_set.min,
+            // maxColor: color_set.max
         },
 
         legend: {
@@ -116,6 +141,7 @@ function makeHeatmap(d, div_id, max, color_index) {
         },
 
         tooltip: {
+          enabled: false,
           formatter: function() {
             return '<b>' + this.point.value + '</b>' + '</b>% of sub-national data is available for <br><i>' + '<b>' + this.series.xAxis.categories[this.point.x] + '</b> on the indicator <br><b>' +
               '<i>' + this.series.yAxis.categories[this.point.y] + '</i>';
@@ -274,4 +300,4 @@ function makeHeatmapNational(d, div_id, max, color_index) {
   });
 };
 
-makeHeatmap("data/indicator_data_indicator_assessment.json", '#heatmap', 100, 0);
+makeHeatmap("data/indicator_data_categorical_assessment.json", '#heatmap', 4, 0);
