@@ -184,15 +184,22 @@ downloadAndClean <- function(p = NULL, verbose = FALSE) {
   # Making categories
   categories_data <- determineCategory(categories_indicator)
   
+	Mode <- function(x) {
+	  ux <- unique(x)
+	  ux[which.max(tabulate(match(x, ux)))]
+	}
+  
 	# Adding total + arranging data for prettier display
 	categories_data$"East_Africa" <-
 	  apply(
 	    categories_data[2:ncol(categories_data)],
 	    1,
-	    sum
+	    Mode
 	  )
 	categories_data <- arrange(categories_data, East_Africa)
-	categories_data$East_Africa <- NULL
+# 	categories_data$East_Africa <- as.numeric(categories_data$East_Africa)
+  names(categories_data)[12] <- "East Africa"
+# 	categories_data$East_Africa <- NULL
   
   
   ########################
