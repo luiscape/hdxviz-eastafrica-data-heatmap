@@ -32,7 +32,7 @@ downloadAndClean <- function(p = NULL, verbose = FALSE) {
   # Adding iso codes for the countries.
 	d$iso <- countrycode(d$iso, "country.name", "iso3c")
 	d$iso <- countrycode(d$iso, "iso3c", "country.name")
-  
+	  
   # Converting data points into a logical test so
   # we can evaluate if that is missing or not.
   d[3:ncol(d)] <- is.na(d[3:ncol(d)])
@@ -150,6 +150,50 @@ downloadAndClean <- function(p = NULL, verbose = FALSE) {
   names(indicator_assessment)[12] <- "East Africa"
   
   
+  ### Making categories
+	categories_country <- country_assessment
+  categories_indicator <- indicator_assessment
+	categories_country[2:11] <- ifelse(categories_country[2:11] == 1, "National", "No National")
+  
+	categories_indicator <- select(categories_indicator, -12)
+  
+  determineCategory <- function(df) {
+    
+    molten <- melt(df, id.vars = "Indicator")
+  
+    molten$value <- ifelse(molten$value < 18 & molten$value != 0, "National", molten$value)
+    molten$value <- ifelse(molten$value == 100, "Complete", as.character(molten$value))
+    molten$value <- ifelse(molten$value == "0", "No data", molten$value)
+    molten$value <- ifelse(!is.na(as.numeric(molten$value)), "Partial", molten$value)
+    
+    
+    molten$value <- ifelse(molten$value == "No data", 1, molten$value)
+    molten$value <- ifelse(molten$value == "National", 2, molten$value)
+    molten$value <- ifelse(molten$value == "Partial", 3, molten$value)
+    molten$value <- ifelse(molten$value == "Complete", 4, molten$value)
+    
+    molten$value <- as.numeric(molten$value)
+    
+    molten <- arrange(molten, value)
+
+    df <- dcast(molten, Indicator ~ variable)
+    
+    return(df)
+  }
+	
+  # Making categories
+  categories_data <- determineCategory(categories_indicator)
+  
+	# Adding total + arranging data for prettier display
+	categories_data$"East_Africa" <-
+	  apply(
+	    categories_data[2:ncol(categories_data)],
+	    1,
+	    sum
+	  )
+	categories_data <- arrange(categories_data, East_Africa)
+	categories_data$East_Africa <- NULL
+  
   
   ########################
   # TERMINAL ASSESSMENTS #
@@ -182,9 +226,14 @@ downloadAndClean <- function(p = NULL, verbose = FALSE) {
 	sink(paste0(p, "_country_indicator_assessment", ".json"))
 	cat(toJSON(country_assessment))
 	sink()
+  
+  # Categorical assessment
+  sink(paste0(p, "_categorical_assessment", ".json"))
+  cat(toJSON(categories_data))
+  sink()
 	
 
-	write.csv(indicator_assessment, paste0(p, "_indicator_assessment", ".csv"), row.names = FALSE)
+	#write.csv(indicator_assessment, paste0(p, "_indicator_assessment", ".csv"), row.names = FALSE)
 	
   
 }

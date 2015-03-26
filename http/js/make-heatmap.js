@@ -55,15 +55,16 @@ function makeHeatmap(d, div_id, max, color_index) {
 
         chart: {
           type: 'heatmap',
-          marginTop: 80,
+          marginTop: 150,
           marginBottom: 80,
-          marginLeft: 80,
-          marginRight: 120,
+          marginLeft: 0,
+          marginRight: 200,
           height: 2000,
           width: 800,
           reflow: true
         },
 
+        color: ["#a6611a", "#dfc27d", "#80cdc1", "#018571"],
         credits: false,
 
         title: {
@@ -79,7 +80,7 @@ function makeHeatmap(d, div_id, max, color_index) {
         // load country list
         yAxis: {
           title: null,
-          categories: indicators,
+          categories: json["Indicator"],
           title: null,
           opposite: true,
           minPadding: 0,
@@ -95,18 +96,39 @@ function makeHeatmap(d, div_id, max, color_index) {
         colorAxis: {
           min: 0,
           max: max,
-          minColor: color_set.min,
-          maxColor: color_set.max
+          dataClasses: [{
+              color: "#018571",
+              name: "Complete",
+              from: 4,
+              to: 4
+            }, {
+              color: "#80cdc1",
+              name: "Partial",
+              from: 3,
+              to: 3
+            }, {
+              color: "#dfc27d",
+              name: "National",
+              from: 2,
+              to: 2
+            }, {
+              color: "#a6611a",
+              name: "No data",
+              from: 1,
+              to: 1
+            }]
+            // minColor: color_set.min,
+            // maxColor: color_set.max
         },
 
         legend: {
           enabled: true,
           align: 'left',
-          layout: 'vertical',
+          layout: 'horizontal',
           verticalAlign: 'top',
-          margin: 0,
-          y: 120,
-          symbolHeight: 250,
+          margin: 1000,
+          y: 30,
+          symbolHeight: 20,
           style: {
             "color": "contrast",
             "fontSize": "10px",
@@ -116,6 +138,7 @@ function makeHeatmap(d, div_id, max, color_index) {
         },
 
         tooltip: {
+          enabled: false,
           formatter: function() {
             return '<b>' + this.point.value + '</b>' + '</b>% of sub-national data is available for <br><i>' + '<b>' + this.series.xAxis.categories[this.point.x] + '</b> on the indicator <br><b>' +
               '<i>' + this.series.yAxis.categories[this.point.y] + '</i>';
@@ -189,7 +212,7 @@ function makeHeatmapNational(d, div_id, max, color_index) {
 
         chart: {
           type: 'heatmap',
-          marginTop: 80,
+          marginTop: 120,
           marginBottom: 80,
           marginLeft: 0,
           height: 2000,
@@ -230,9 +253,8 @@ function makeHeatmapNational(d, div_id, max, color_index) {
 
         legend: {
           enabled: false,
-          align: 'top',
+          align: 'center',
           layout: 'vertical',
-          margin: 0,
           verticalAlign: 'top',
           y: 120,
           symbolHeight: 280,
@@ -274,4 +296,4 @@ function makeHeatmapNational(d, div_id, max, color_index) {
   });
 };
 
-makeHeatmap("data/indicator_data_indicator_assessment.json", '#heatmap', 100, 0);
+makeHeatmap("data/indicator_data_categorical_assessment.json", '#heatmap', 4, 0);
