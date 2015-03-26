@@ -55,10 +55,10 @@ function makeHeatmap(d, div_id, max, color_index) {
 
         chart: {
           type: 'heatmap',
-          marginTop: 80,
+          marginTop: 150,
           marginBottom: 80,
-          marginLeft: 80,
-          marginRight: 120,
+          marginLeft: 0,
+          marginRight: 200,
           height: 2000,
           width: 800,
           reflow: true
@@ -80,7 +80,7 @@ function makeHeatmap(d, div_id, max, color_index) {
         // load country list
         yAxis: {
           title: null,
-          categories: indicators,
+          categories: json["Indicator"],
           title: null,
           opposite: true,
           minPadding: 0,
@@ -97,28 +97,25 @@ function makeHeatmap(d, div_id, max, color_index) {
           min: 0,
           max: max,
           dataClasses: [{
-            color: "#a6611a",
-            name: "Complete",
-            from: 1,
-            to: 1
-            },
-            {
-            color: "#dfc27d",
-            name: "National",
-            from: 2,
-            to: 2
-            },
-            {
-            color: "#80cdc1",
-            name: "Partial",
-            from: 3,
-            to: 3
-            },
-            {
-            color: "#018571",
-            name: "No data",
-            from: 4,
-            to: 4
+              color: "#018571",
+              name: "Complete",
+              from: 4,
+              to: 4
+            }, {
+              color: "#80cdc1",
+              name: "Partial",
+              from: 3,
+              to: 3
+            }, {
+              color: "#dfc27d",
+              name: "National",
+              from: 2,
+              to: 2
+            }, {
+              color: "#a6611a",
+              name: "No data",
+              from: 1,
+              to: 1
             }]
             // minColor: color_set.min,
             // maxColor: color_set.max
@@ -127,11 +124,11 @@ function makeHeatmap(d, div_id, max, color_index) {
         legend: {
           enabled: true,
           align: 'left',
-          layout: 'vertical',
+          layout: 'horizontal',
           verticalAlign: 'top',
-          margin: 0,
-          y: 120,
-          symbolHeight: 250,
+          margin: 1000,
+          y: 30,
+          symbolHeight: 20,
           style: {
             "color": "contrast",
             "fontSize": "10px",
@@ -215,7 +212,7 @@ function makeHeatmapNational(d, div_id, max, color_index) {
 
         chart: {
           type: 'heatmap',
-          marginTop: 80,
+          marginTop: 120,
           marginBottom: 80,
           marginLeft: 0,
           height: 2000,
@@ -256,9 +253,8 @@ function makeHeatmapNational(d, div_id, max, color_index) {
 
         legend: {
           enabled: false,
-          align: 'top',
+          align: 'center',
           layout: 'vertical',
-          margin: 0,
           verticalAlign: 'top',
           y: 120,
           symbolHeight: 280,

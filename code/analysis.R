@@ -166,6 +166,15 @@ downloadAndClean <- function(p = NULL, verbose = FALSE) {
     molten$value <- ifelse(molten$value == "0", "No data", molten$value)
     molten$value <- ifelse(!is.na(as.numeric(molten$value)), "Partial", molten$value)
     
+    
+    molten$value <- ifelse(molten$value == "No data", 1, molten$value)
+    molten$value <- ifelse(molten$value == "National", 2, molten$value)
+    molten$value <- ifelse(molten$value == "Partial", 3, molten$value)
+    molten$value <- ifelse(molten$value == "Complete", 4, molten$value)
+    
+    molten$value <- as.numeric(molten$value)
+    
+    molten <- arrange(molten, value)
 
     df <- dcast(molten, Indicator ~ variable)
     
@@ -175,6 +184,15 @@ downloadAndClean <- function(p = NULL, verbose = FALSE) {
   # Making categories
   categories_data <- determineCategory(categories_indicator)
   
+	# Adding total + arranging data for prettier display
+	categories_data$"East_Africa" <-
+	  apply(
+	    categories_data[2:ncol(categories_data)],
+	    1,
+	    sum
+	  )
+	categories_data <- arrange(categories_data, East_Africa)
+	categories_data$East_Africa <- NULL
   
   
   ########################
