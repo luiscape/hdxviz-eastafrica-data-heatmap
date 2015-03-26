@@ -97,22 +97,22 @@ function makeHeatmap(d, div_id, max, color_index) {
           min: 0,
           max: max,
           dataClasses: [{
-              color: "#018571",
+              color: "#238b45",
               name: "Complete",
               from: 4,
               to: 4
             }, {
-              color: "#80cdc1",
+              color: "#74c476",
               name: "Partial",
               from: 3,
               to: 3
             }, {
-              color: "#dfc27d",
+              color: "#bae4b3",
               name: "National",
               from: 2,
               to: 2
             }, {
-              color: "#a6611a",
+              color: "#ecf0f1",
               name: "No data",
               from: 1,
               to: 1
