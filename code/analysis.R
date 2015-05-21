@@ -70,12 +70,15 @@ downloadAndClean <- function(p = NULL, verbose = FALSE) {
   # Assessment of indicators per country: national
   c = d_melt
   c$is_country <- countrycode(d_melt$location, "country.name", "iso3c")
+  
+  # Fixing exceptions (cities).
+	c$is_country <- ifelse(c$location == 'Djibouti(city)', NA, c$is_country)
+	c$is_country <- ifelse(c$location == 'Somali (city)', NA, c$is_country)
   c$is_country <- !is.na(c$is_country)
-  c_melt <- subset(c, is_country == TRUE & location != "Somali")
   
   
 	# Assessment of indicators per country: sub-national
-	country_assessment <- dcast(subset(c_melt, value == FALSE), variable ~ iso)
+	country_assessment <- dcast(subset(c, value == FALSE), variable ~ iso)
 	names(country_assessment)[1] <- "Indicator"
 	
 	# Adding total
@@ -96,8 +99,8 @@ downloadAndClean <- function(p = NULL, verbose = FALSE) {
   # country_assessment[nrow(country_assessment) + 1,] <- c("Disaster Risk Reduction", rep(0, ncol(country_assessment) - 1))
 
   # Fixing how some countries have 2 to 1.
-  country_assessment$Djibouti <- ifelse(country_assessment$Djibouti == 2, 1, country_assessment$Djibouti)
-  country_assessment$Ethiopia <- ifelse(country_assessment$Ethiopia == 2, 1, country_assessment$Ethiopia)
+#   country_assessment$Djibouti <- ifelse(country_assessment$Djibouti == 2, 1, country_assessment$Djibouti)
+#   country_assessment$Ethiopia <- ifelse(country_assessment$Ethiopia == 2, 1, country_assessment$Ethiopia)
 
   # Re-arranging data.
   country_assessment$East_Africa <- as.numeric(country_assessment$East_Africa)
@@ -105,7 +108,7 @@ downloadAndClean <- function(p = NULL, verbose = FALSE) {
   names(country_assessment)[12] <- "East Africa"
 
   # Removing East Africa from the country assessment column
-  country_assessment$"East Africa" <- NULL
+  # country_assessment$"East Africa" <- NULL
   
   # Assessment of indicators per country: sub-national
   melt_grouping <- group_by(d_melt, iso)
